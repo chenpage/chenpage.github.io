@@ -310,6 +310,42 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/compute/" title="当成计算器" class="md-nav__link">
+      当成计算器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/variable/" title="变量" class="md-nav__link">
+      变量
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/type-variable/" title="变量的类型" class="md-nav__link">
+      变量的类型
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -593,14 +629,14 @@
                   
                 
                 
-                <h1 id="pythonpdf">Python读写PDF</h1>
+                <h1 id="pythonpdf">Python读写PDF<a class="headerlink" href="#pythonpdf" title="Permanent link">&para;</a></h1>
 <p>PDF的基本操作主要是读取、创建，合并等操作。使用Python的第三方包<code>PyPDF2</code>.</p>
-<h2 id="_1">安装依赖包</h2>
+<h2 id="_1">安装依赖包<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>使用Python的<code>pip</code>进行安装，安装包名称大小写不敏感。</p>
 <div class="highlight"><pre><span></span><code>pip install PyPDF2
 </code></pre></div>
 
-<h3 id="_2">查看基本的类和方法</h3>
+<h3 id="_2">查看基本的类和方法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>进入包的<code>__init__.py</code>文件可以看到主要的几个类和方法</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">.pdf</span> <span class="kn">import</span> <span class="n">PdfFileReader</span><span class="p">,</span> <span class="n">PdfFileWriter</span>
 <span class="kn">from</span> <span class="nn">.merger</span> <span class="kn">import</span> <span class="n">PdfFileMerger</span>
@@ -610,7 +646,7 @@
 </code></pre></div>
 
 <p>从名称上可以看出提供了基本的操作方法，分别是读取，写入和合并，其中合并可以认为是读取然后 再写入的操作。</p>
-<h2 id="pdf">读取和写入PDF</h2>
+<h2 id="pdf">读取和写入PDF<a class="headerlink" href="#pdf" title="Permanent link">&para;</a></h2>
 <p>读取PDF非常简单，直接使用<code>PdfFileReader</code>这个类，先来看看这个类的参数</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">PdfFileReader</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -652,7 +688,7 @@
 <span class="n">pdf_output</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">outfn</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">))</span>
 </code></pre></div>
 
-<h2 id="pdf_1">合并多个PDF</h2>
+<h2 id="pdf_1">合并多个PDF<a class="headerlink" href="#pdf_1" title="Permanent link">&para;</a></h2>
 <p>合并多个PDF就读取多个文件，然后写入一个文件中。不过这样需要计算页面数，不如直接用<code>PdfFileMerger</code>,提供了<code>append</code>方法</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">PyPDF2</span> <span class="kn">import</span> <span class="n">PdfFileReader</span><span class="p">,</span> <span class="n">PdfFileMerger</span>
 

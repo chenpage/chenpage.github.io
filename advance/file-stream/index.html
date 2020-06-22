@@ -310,6 +310,42 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/compute/" title="当成计算器" class="md-nav__link">
+      当成计算器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/variable/" title="变量" class="md-nav__link">
+      变量
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/type-variable/" title="变量的类型" class="md-nav__link">
+      变量的类型
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -623,7 +659,7 @@
                   
                 
                 
-                <h1 id="python">Python与文件流</h1>
+                <h1 id="python">Python与文件流<a class="headerlink" href="#python" title="Permanent link">&para;</a></h1>
 <p>Python读写文件非常简单，本文除了介绍简单的读写字符文件和字节文件以外，还会介绍文件对象的属性方法和文件流的一些操作，文章内容包含以下方面：</p>
 <ol>
 <li>字符文件和字节文件</li>
@@ -633,7 +669,7 @@
 <li>分析文件对象的源码</li>
 <li>文件流的属性方法</li>
 </ol>
-<h2 id="_1">字符文件和字节文件</h2>
+<h2 id="_1">字符文件和字节文件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>字符文件通常是一些存储字符串的文本文件。在windows记事本创建的txt文件，程序的源代码文件，网页的html文件都是字符文件；字节文件是指存储字节码的文件，也是二进制的文件。比如windows下可执行的exe文件，图片，音频视频文件都是二进制文件。这些文件由0和1构成。</p>
 <p>理论上说所有在计算机上面的文件最终存储形式都是0和1的文件，下面是一个图片文件的二进制,通常是转为16进制，就长这样子：
 <div class="highlight"><pre><span></span><code>00000000: 8950 4e47 0d0a 1a0a 0000 000d 4948 4452  .PNG........IHDR
@@ -655,7 +691,7 @@
 00000100: 3fea 5a1e f662 e8b7 3140 c42f 7ab8 e163  ?.Z..b..1@./z..c
 </code></pre></div></p>
 <p>根据文件类型通常分为字符文件和字节文件（二进制文件），于是Python中操作这两种文件都有对应的方法，不要用混了。</p>
-<h2 id="_2">读写字符文件</h2>
+<h2 id="_2">读写字符文件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>读写普通的字符文件非常容易。比如创建一个字符文件，并且往里面写入1-100的数字。每个数字占一行。</p>
 <div class="highlight"><pre><span></span><code><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;demo.txt&quot;</span>
 <span class="c1"># 以写入的方式创建文件，如果不存在则直接创建</span>
@@ -681,7 +717,7 @@
 <span class="c1"># 5050</span>
 </code></pre></div>
 读取文件一行代码就能搞定。</p>
-<h2 id="_3">读写字节文件</h2>
+<h2 id="_3">读写字节文件<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>字节文件的读取与字符文件读取基本一样，唯一的区别在于指定读写文件模式，<code>open</code>函数有一个参数<code>mode</code>，字节文件的读取为“rb”，写入为“wb”，其中b的意思是binary。</p>
 <p>首先读取图片，然后再把这张图片写入另外的字节文件，有点像复制与粘贴。先来看读取字节码文件，然后打印出来：</p>
 <div class="highlight"><pre><span></span><code><span class="n">fd</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;pic.png&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
@@ -705,7 +741,7 @@
 <span class="n">fw</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 明白了这个原理，用Python在网上下载图片或者视频的时候就能用上了，本质上就是把网上的字节文件，写入本地磁盘。就是这么容易。</p>
-<h2 id="with">上下文<code>with</code>操作文件</h2>
+<h2 id="with">上下文<code>with</code>操作文件<a class="headerlink" href="#with" title="Permanent link">&para;</a></h2>
 <p>with语句是一种上下文资源管理协议，使用with语句格式可以专注于你的操作，而忽视资源的关闭。因为资源打开以后，可能会有问题，导致资源无法回收而占用系统资源。使用with可以这样操作。</p>
 <div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;demo.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
@@ -723,7 +759,7 @@
 </code></pre></div>
 
 <p>省掉了关闭文件的操作，在with的语境下，你的程序出现异常，文件依然能够保证关闭。</p>
-<h2 id="_4">分析文件对象的源码</h2>
+<h2 id="_4">分析文件对象的源码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>open函数的源码使用C语言实现的，属于builtins方法（内建方法）。我们来看看几个关键参数：</p>
 <p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span>
          <span class="n">buffering</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
@@ -762,7 +798,7 @@ buffering 参数表示缓冲区的的策略。分别取值为None，0，1，大�
    <span class="c1"># 内容较多省略</span>
 </code></pre></div>
 如果使用IDE查看源码最方便，打开源码我们发现这个类又是内建模块。我们接下来看看文件流的一些常用方法。</p>
-<h2 id="_5">文件流的属性方法</h2>
+<h2 id="_5">文件流的属性方法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p><code>open</code>函数返回的对象就是文件流（<em>Open file and return a stream.  Raise OSError upon failure</em>）。上面我们看到返回的是*_io.TextIOWrapper*这个类。文件流有很多方法，上面已经用到了一些，例如<code>read</code>读取全部内容，<code>write</code>写入内容。接下来我们通过一个例子来说明这些方法。</p>
 <p><div class="highlight"><pre><span></span><code><span class="c1"># 创建文件，写入1-100，并且每个一个数字占一行</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;demo.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
@@ -841,7 +877,7 @@ buffering 参数表示缓冲区的的策略。分别取值为None，0，1，大�
 </code></pre></div>
 
 <p>除了这几个常用的方法以外，还有一些方法不是很常用，例如detach，isatty，reconfigure等等，如果在实际中碰到复杂的文件流问题，需要进一步查看底层的C语言源码，或者用C写扩展方法。</p>
-<h2 id="_6">总结一下</h2>
+<h2 id="_6">总结一下<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>本文重点整理了Python操作字符文件和字节文件的方法，对于基本的读写使用，几行代码就能搞定；除此之外建议使用with的上下文语句，这样避免手动进行资源管理；后续进一步介绍了文件流对象，以及对象的部分方法，重点介绍了文件指针的操作，操作文件指针时字节文件和字符文件是存在差别的。碰到复杂的问题，例如需要对同一个文件进行读写操作，会用到文件指针。</p>
 <p><img alt="关注我" src="../../images/qrcode.jpg" /></p>
                 

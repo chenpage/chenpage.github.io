@@ -310,6 +310,42 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/compute/" title="当成计算器" class="md-nav__link">
+      当成计算器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/variable/" title="变量" class="md-nav__link">
+      变量
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/type-variable/" title="变量的类型" class="md-nav__link">
+      变量的类型
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -595,11 +631,11 @@
                   
                 
                 
-                <h1 id="python">Python类型标注</h1>
+                <h1 id="python">Python类型标注<a class="headerlink" href="#python" title="Permanent link">&para;</a></h1>
 <p>机器学习越来越火，大量的机器学习包都支持Python，导致了Python近几年非常火爆，入手门槛低，编程简单，概念非常少。越来越多的新手小白加入到Python编程。</p>
 <p>Python虽然简单，但也带来很多问题。尤其是弱类型一直被诟病，平时在写代码时，经常也会模糊参数的类型，导致debug难度增加。</p>
 <p>自从Python3.5以来，发布了<code>typing</code>包，推荐标注类型，并且IDE会检查类型，让Python看起来有点<code>静态语言</code>的感觉了。本文主要参考Python3.7.5的<a href="https://docs.python.org/zh-cn/3.7/library/typing.html#">官方文档</a> <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
-<h2 id="_1">常用的类型</h2>
+<h2 id="_1">常用的类型<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>常用的几种类型，如<code>int</code>, <code>float</code>, <code>str</code>, <code>List</code>, <code>Tuple</code>, <code>Dict</code>。接下来看几个例子：
 首先必须从<code>typing</code>中导入类型</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Tuple</span>
@@ -634,7 +670,7 @@
     <span class="k">pass</span>
 </code></pre></div>
 
-<h2 id="_2">多种类型</h2>
+<h2 id="_2">多种类型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>不是多个参数，而是多类型，是输入参数可能存在多种类型，这种情况在Java中多态来解决。而Python本身是弱类型，输入参数没有强制规定，这个时候该怎么办？比如传入参数可能为<code>int</code>, <code>str</code>, <code>float</code>.<code>typing</code>包给我们提供了办法，可以用<code>Union</code>来定义:</p>
 <p><div class="highlight"><pre><span></span><code><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span>
 </code></pre></div>
@@ -644,7 +680,7 @@
 <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 </code></pre></div>
 
-<h2 id="_3">函数作为输入参数</h2>
+<h2 id="_3">函数作为输入参数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>如果函数作为输入参数，如何标记类型呢？其实也不复杂，函数是callable的类型，同样指定传入和传出参数即可。我们来看一个求和的函数，第一个参数就是函数。<code>add_all</code>只是把所有的元素相加，至于对每个元素做什么操作，取决于传入的函数了。</p>
 <p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_all</span><span class="p">(</span><span class="n">f</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">int</span><span class="p">],</span> <span class="n">params</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]):</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">params</span><span class="p">))</span>
@@ -652,7 +688,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">add_all</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))))</span>
 </code></pre></div>
 这里要注意的是函数作为参数，有输入和输出值。定义较为麻烦，<code>func: Callable[[int], int]</code>,输入参数内部嵌套了中括号，仔细想想也能明白，如果<code>func: Callable[int, int]</code>定义，那么输入参数和输出参数该怎么理解呢？想明白了，你就理解了。</p>
-<h2 id="_4">返回生成器</h2>
+<h2 id="_4">返回生成器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>生成器在Python是非常常用的，可以很大提高程序的运行效率。如果需要返回生成器对象该怎么做呢？从<code>typing</code>包中导入<code>Generator</code>.我们来看一下例子，输入列表list，需要每次返回num个数据块。</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Generator</span>
 <span class="kn">import</span> <span class="nn">math</span>
@@ -674,7 +710,7 @@
     <span class="nb">print</span><span class="p">(</span><span class="n">each</span><span class="p">)</span>
 </code></pre></div>
 
-<h2 id="_5">小结</h2>
+<h2 id="_5">小结<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>本文分别列举了常用参数的类型标注方法，同时也给出了多种参数类型，以及函数和生成器作为参数输入的类型标注方法。参数的类型标注是很重要的，一方面可以帮助你理解每个参数的类型，另一方面也增强了代码的可读性。尤其是别人读到你的代码，调用起来会清晰很多。更多详细的说明可以查看官方文档或者源码。</p>
 <p><img alt="关注我" src="../../images/qrcode.jpg" /></p>
 <div class="footnote">
