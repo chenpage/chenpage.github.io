@@ -362,9 +362,63 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        判断
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
     <a href="./" title="判断" class="md-nav__link md-nav__link--active">
       判断
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    if单独使用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-else" class="md-nav__link">
+    if-else 搭配使用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-else_1" class="md-nav__link">
+    if-else多级判断
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -559,6 +613,44 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    if单独使用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-else" class="md-nav__link">
+    if-else 搭配使用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-else_1" class="md-nav__link">
+    if-else多级判断
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -574,6 +666,56 @@
                 
                 
                 <h1 id="_1">判断<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>逻辑判断在我们的生活中很常见。女孩对程序员男朋友说“亲爱的，下班路上买一斤包子回来，如果看见卖西瓜的，就买一个。于是男朋友下班后带了一个包子回家”</p>
+<h2 id="if">if单独使用<a class="headerlink" href="#if" title="Permanent link">&para;</a></h2>
+<p>仔细分析这个逻辑并没有问题，解决这个<code>如果</code>就需要程序去判断。我们先来看程序结构。</p>
+<div class="highlight"><pre><span></span><code>buy_things = &quot;买一斤包子&quot;
+if &quot;看见卖西瓜的&quot;:
+    buy_things = &quot;买一个包子&quot;
+
+ 输出(buy_things) 
+</code></pre></div>
+
+<h2 id="if-else">if-else 搭配使用<a class="headerlink" href="#if-else" title="Permanent link">&para;</a></h2>
+<p>Python实现判断结构用到关键词<code>if</code>，也可以与<code>else</code>一起使用。使用的逻辑为：</p>
+<div class="highlight"><pre><span></span><code>if 事件结果:
+    执行语句1
+else:
+    执行语句2
+</code></pre></div>
+
+<p>如果事件结果为真，那就<code>执行语句1</code>，否则<code>执行语句2</code>.当然可以像上面的例子，单独使用if关键词。</p>
+<h2 id="if-else_1">if-else多级判断<a class="headerlink" href="#if-else_1" title="Permanent link">&para;</a></h2>
+<p>除此之外还可以嵌套使用，比如学校成绩评ABCDE5个等级。超过90分为A，80-89为B，70-79为C，60-69为D，低于60分的为E。要解决这个问题，就需要if-elif-else 多级判断了。这个程序我相信你能写出来，我们给出关键部分程序，完整的程序请读者自行尝试。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">grade</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+<span class="k">if</span> <span class="mi">90</span> <span class="o">&lt;=</span> <span class="n">score</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span>
+<span class="k">elif</span> <span class="mi">80</span> <span class="o">&lt;=</span> <span class="n">score</span> <span class="o">&lt;=</span> <span class="mi">89</span><span class="p">:</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s2">&quot;B&quot;</span>
+<span class="k">elif</span> <span class="mi">70</span> <span class="o">&lt;=</span> <span class="n">score</span> <span class="o">&lt;=</span> <span class="mi">79</span><span class="p">:</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s2">&quot;C&quot;</span>
+<span class="k">elif</span> <span class="mi">60</span> <span class="o">&lt;=</span> <span class="n">score</span> <span class="o">&lt;=</span> <span class="mi">69</span><span class="p">:</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s2">&quot;D&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s2">&quot;E&quot;</span>
+</code></pre></div>
+</td></tr></table>
+
+<h2 id="_2">总结<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>这里我们讲了三种判断逻辑，分别是单独使用if，if-else搭配使用，if-elif-else多级判断。逻辑判断在程序中广泛使用，读者需要灵活的掌握。</p>
+<p><img alt="" src="../../images/qrcode.jpg" /></p>
                 
               
               

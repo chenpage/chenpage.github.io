@@ -52,6 +52,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -366,10 +371,59 @@
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        循环
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
     
     <a href="./" title="循环" class="md-nav__link md-nav__link--active">
       循环
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    跳出循环
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    补充
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -542,6 +596,52 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    跳出循环
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    补充
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -551,9 +651,96 @@
                   
                 
                 
-                  <h1>循环</h1>
-                
-                
+                <h1 id="_1">循环<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>计算机非常擅长的事情是大量重复的事情，而人类是非常讨厌反复重复的事情。比如说让你从1写到1000，你可能就要怀疑人生了，写这个有什么用，但是对于计算机来说，这么简单的任务，不要一秒钟就跟输出来，而且还能花式输出。</p>
+<p>计算机处理这些大量重复事情时需要用到循环。比如老师罚你抄写李白的《望庐山瀑布》一百遍。</p>
+<div class="highlight"><pre><span></span><code>日照香炉生紫烟，遥看瀑布挂前川。
+飞流直下三千尺，疑是银河落九天。
+</code></pre></div>
+
+<p>这个时候一个循环语句就能秒杀。循环语句分为<code>for</code>语句和<code>while</code>语句。</p>
+<div class="highlight"><pre><span></span><code><span class="n">poem</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">日照香炉生紫烟，遥看瀑布挂前川。</span>
+<span class="s2">飞流直下三千尺，疑是银河落九天。</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">poem</span><span class="p">)</span>
+
+<span class="c1"># 改造成while</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">poem</span><span class="p">)</span>
+     <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div>
+
+<p><code>for</code>循环强制循环，很容确定循环的次数。比如我们就要循环100次，使用range生成0-99的序列，也就是100个数，然后用for循环遍历这100个数的序列，从而达到了循环执行<code>print(poem)</code>一百次的效果。而<code>while</code>循环特点是**条件循环**，执行的条件是<code>i &lt; 100</code>,当不满足这个条件以后，循环将会跳出。</p>
+<p>在很多时候这两种循环是可以转化的，不过还是得看具体情况，读者不必担心，这里不是考试，不会强迫相互改写。</p>
+<div class="admonition note">
+<p class="admonition-title">动手题</p>
+<p>读者可以考虑输出9x9的乘法表</p>
+</div>
+<h2 id="_2">跳出循环<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>跳出循环适用于for和while循环，不过跳出用两种方式。
+1. 跳出当前循环，继续执行下一次循环。用<code>continue</code>.
+2. 跳出循环，不再执行循环。用<code>break</code></p>
+<p>比如我们输出0-9的数字，一种情况是不输出7，也就是跳过7，直接输出8和9.另外一种就是碰到7以后不再输出了。我们用for循环分别来实现这两种情况。</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+        <span class="k">continue</span> <span class="c1"># 跳出当前循环，继续下一次</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div>
+输出结果为：
+<div class="highlight"><pre><span></span><code>0
+1
+2
+3
+4
+5
+6
+8
+9
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+        <span class="k">break</span>  <span class="c1"># 结束循环</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div>
+
+<p>输出结果为：
+<div class="highlight"><pre><span></span><code>0
+1
+2
+3
+4
+5
+6
+</code></pre></div></p>
+<h2 id="_3">补充<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>其实<code>for</code>和<code>while</code>循环是可以配合<code>else</code>的，当循环正常执行完毕，会执行<code>else</code>语句，如果碰到<code>break</code>跳出了循环则不会执行<code>else</code>语句。</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">container</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">search_something</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+        <span class="c1"># Found it!</span>
+        <span class="n">process</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="k">break</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Didn&#39;t find anything..</span>
+    <span class="n">not_found_in_container</span><span class="p">()</span>
+</code></pre></div>
+我们还是继续看上面的例子，找到数字7以后循环结束。</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;找到数字7了&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;循环结束，没找到&quot;</span><span class="p">)</span>
+
+<span class="c1"># 找到数字7了</span>
+</code></pre></div>
+修改上面的break让循环执行完，则else语句也会被执行。</p>
+<h2 id="_4">总结<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>本节主要介绍了循环语句，<code>for</code>循环和<code>while</code>循环。补充了循环可以与else搭配使用。在编程的时候，循环用得非常多，这个是计算机的专长，需要多加练习。</p>
+<p><img alt="" src="../../images/qrcode.jpg" /></p>
                 
               
               
