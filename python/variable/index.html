@@ -338,9 +338,49 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        变量
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
     <a href="./" title="变量" class="md-nav__link md-nav__link--active">
       变量
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    变量是什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    变量的命名
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -353,6 +393,54 @@
   <li class="md-nav__item">
     <a href="../type-variable/" title="变量的类型" class="md-nav__link">
       变量的类型
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../if/" title="判断" class="md-nav__link">
+      判断
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../for-while/" title="循环" class="md-nav__link">
+      循环
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../function/" title="函数初步" class="md-nav__link">
+      函数初步
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../func-return/" title="函数返回值" class="md-nav__link">
+      函数返回值
     </a>
   </li>
 
@@ -511,6 +599,30 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    变量是什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    变量的命名
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -526,7 +638,51 @@
                 
                 
                 <h1 id="_1">变量<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p><iframe src="//player.bilibili.com/player.html?aid=456097265&bvid=BV1k5411W7fP&cid=203915907&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="1000" height="600"> </iframe></p>
+<iframe src="//player.bilibili.com/player.html?aid=456097265&bvid=BV1k5411W7fP&cid=203915907&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="1000" height="600"> </iframe>
+
+<h2 id="_2">变量是什么<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>变量是指向数据地址的标签，不是存储数据的地址</p>
+</blockquote>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+
+<span class="c1"># a b 的地址是相同的</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;变量a的地址：</span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="si">}</span><span class="s2">, 变量b的地址</span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="c1"># a b 地址的不同了</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;变量a的地址：</span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="si">}</span><span class="s2">, 变量b的地址</span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="c1"># 发现a b的地址又相同了</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;变量a的地址：</span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="si">}</span><span class="s2">, 变量b的地址</span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+
+<p>上面做了一个小实验，我们g给变量a赋值100，变量a在赋值给b，于是a，b的地址相同。重新赋值200给b，于是这两个变量的地址不同了。说明每次赋值操作，变量会重新指向新的地址。这跟C语言这样的静态语言不同，静态语言声明变量以后，这个变量类型就固定了，比如整型，就只能放整数，不同的赋值操作都是放在相同内存位置。</p>
+<p>由于变量仅仅只是标签，变量在使用的时候就不需要声明类型了。并且可以指向任意的数据类型，我们可以把整型赋值给变量，也可以把字符串赋值给这个变量，甚至可以把函数或者类赋值给变量。这就是弱类型带来的好处，使得Python上手起来容易。</p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;hello world&quot;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
+</code></pre></div>
+
+<p>Python除了弱类型等特点，在执行的时候与静态语言也有区别。Python是边解释边运行的，而不是编译成字节码或者机器码以后再执行的。这个特点读者以后会慢慢明白。</p>
+<h2 id="_3">变量的命名<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>变量的命名规则：<strong>以字母或者下划线开头，后面可以接数字和字母。</strong></p>
+<p>其实变量的命名是一个比较宽泛的规则。算不上什么知识点，除了学校无聊地考试，没人会傻不拉几的用奇奇怪怪的变量名称。至于变量是否合法，IDE会提示你。不用担心以下四个选项那个变量不合法。</p>
                 
               
               
@@ -580,6 +736,10 @@
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2015 - 2020 Vincent Chan
+          </div>
         
         Made with
         <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">

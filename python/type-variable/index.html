@@ -350,10 +350,119 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        变量的类型
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
     <a href="./" title="变量的类型" class="md-nav__link md-nav__link--active">
       变量的类型
     </a>
     
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    整型浮点型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    字符型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    布尔类型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#none" class="md-nav__link">
+    None数据类型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    查看数据类型
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../if/" title="判断" class="md-nav__link">
+      判断
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../for-while/" title="循环" class="md-nav__link">
+      循环
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../function/" title="函数初步" class="md-nav__link">
+      函数初步
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../func-return/" title="函数返回值" class="md-nav__link">
+      函数返回值
+    </a>
   </li>
 
         
@@ -511,6 +620,51 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    整型浮点型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    字符型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    布尔类型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#none" class="md-nav__link">
+    None数据类型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    查看数据类型
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -525,7 +679,56 @@
                   
                 
                 
-                <h1 id="_1">变量的类型<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+                <h1 id="_1">基本数据类型<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>上一节我们初步介绍了变量，变量可以指向任意类型。也就是说可以把任意类型的数据或者对象赋值给变量。接下来我们看看有哪些数据类型。</p>
+<h2 id="_2">整型浮点型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>这个无需多说，就是整数和小数。不过Python使用整数和小数不用区分<code>无符号型</code>还是长整数类型。赋值的时候解释器可以自动判断。比如我们赋值一个较大的数，不用担心内存溢出。</p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">426172329382983081293892893887437739</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># 完全没有问题</span>
+</code></pre></div>
+
+<p>小数也是同样操作，除了大数计算以外，整型、浮点型数据是可以满足正常需求的。</p>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>我找了半天也没看到Python支持的最大整型数多少?</p>
+</div>
+<h2 id="_3">字符型<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>字符型数据非常简单，用英文引号包裹的数据，引号可以是单引号、双引号、三引号。</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;hello Python&#39;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;hello Python&quot;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;hello Python&quot;&quot;&quot;</span>
+</code></pre></div>
+如果引号里包含引号怎么办？我们可以用单引号包裹双引号，或者双引号包裹单引号。数据中同时有单引号，双引号那就用三引号。</p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;好好学编程，天天&#39;搬砖&#39;&quot;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;好好学编程，天天&quot;搬砖&quot;&#39;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;老板说：“你们要&#39;好好学编程，天天&quot;搬砖&quot;&#39;” &quot;&quot;&quot;</span>
+</code></pre></div>
+
+<p>当然你也可以采用<code>\</code>进行转义。</p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;好好学编程，天天</span><span class="se">\&quot;</span><span class="s2">搬砖</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;好好学编程，天天</span><span class="se">\&#39;</span><span class="s1">搬砖</span><span class="se">\&#39;</span><span class="s1">&#39;</span>
+</code></pre></div>
+
+<p>如果你在使用字符串时，引号出错，IDE也会提醒你，看着颜色不对，你就知道这么用有问题。</p>
+<h2 id="_4">布尔类型<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>布尔类型只有两种，<code>True</code> 和 <code>False</code>。其中<code>True</code> 为真，<code>False</code>为假。之后做为判断的条件使用非常多。</p>
+<h2 id="none">None数据类型<a class="headerlink" href="#none" title="Permanent link">&para;</a></h2>
+<p><code>None</code> 是一种特殊的数据类型，准确的说是<code>NoneType</code>类型。通常作为函数或者运算的返回结果。</p>
+<h2 id="_5">查看数据类型<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>使用<code>type</code>函数可以查看数据的类型。</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">int</span><span class="s1">&#39;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;我是谁&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">str</span><span class="s1">&#39;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">NoneType</span><span class="s1">&#39;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="mf">1.23456</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">float</span><span class="s1">&#39;&gt;</span>
+</code></pre></div>
+
+<p><img alt="" src="../../images/qrcode.jpg" /></p>
                 
               
               
@@ -559,13 +762,13 @@
           </a>
         
         
-          <a href="../../advance/intro/" title="课程介绍" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../if/" title="判断" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                课程介绍
+                判断
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -579,6 +782,10 @@
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2015 - 2020 Vincent Chan
+          </div>
         
         Made with
         <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
