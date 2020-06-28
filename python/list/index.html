@@ -685,15 +685,15 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    列表排序
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    总结
+  </a>
   
 </li>
       
@@ -1093,15 +1093,15 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    列表排序
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    总结
+  </a>
   
 </li>
       
@@ -1162,15 +1162,98 @@
 <li>3个元素，某一段具有步长的元素。如<code>l[1:-1:2]</code></li>
 </ul>
 <h2 id="_4">列表遍历<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>我们吧东西放在容器中，最常做的事情应该就是在容器中找我们想要的东西了。遍历就是在不重复的情况下，找遍所有的元素。通常使用<code>for</code>来循环遍历。</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">list_data</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div>
+遍历的方式如上，item从第0个元素开始，知道取完<code>list_data</code>中所有元素循环停止。通常在C语言或者Java中通过定义下标来遍历，Python中同样是支持下标索引的。</p>
+<p>有没有办法既能获取下标，又能同时获取到元素呢？使用<code>enumerate</code>函数进行处理，第一个元素为下标，第二个就是列表中的元素了。</p>
+<div class="highlight"><pre><span></span><code><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="s2">&quot;==&gt;&quot;</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+</code></pre></div>
+
+<p>输出结果为：</p>
+<div class="highlight"><pre><span></span><code>0 ==&gt; a
+1 ==&gt; 1
+2 ==&gt; 2
+3 ==&gt; 3
+4 ==&gt; None
+5 ==&gt; True
+</code></pre></div>
+
 <h2 id="_5">列表的方法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>想象一下你有一个容器里面存放各种玩具，你现在新买了一批玩具，是不是要把他们放进去，有些玩具不想要了，想要扔掉，这些都是正常的处理方法。</p>
+<p>这些处理方法包括添加一个元素，添加多个元素，删除元素，统计某个元素等方法。</p>
 <h3 id="_6">添加元素<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>添加一个元素使用<code>append</code>方法，会把新元素添加到列表的末尾。</p>
+<div class="highlight"><pre><span></span><code><span class="n">list_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</code></pre></div>
+
 <h3 id="_7">插入元素<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>插入元素可以指定插入的位置。<code>insert(index, object)</code>其中<code>index</code>为要插入的位置，<code>object</code>要插入的元素（对象）。</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">l</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">l</span>
+<span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+</code></pre></div>
+
 <h3 id="_8">删除元素<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>删除元素使用<code>remove</code>方法<code>remove(value)</code>其中的<code>value</code>是列表的元素的值，如果有多个相同的值，只删除第一个。</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">l</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 删除第一个值</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">l</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">l</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># 100 不在列表中</span>
+<span class="n">exec</span><span class="p">(</span><span class="n">code_obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_global_ns</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_ns</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;ipython-input-45-97ac9c8b213c&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="n">l</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="ne">ValueError</span><span class="p">:</span> <span class="nb">list</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">list</span>
+</code></pre></div>
+
 <h3 id="_9">弹出元素<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>弹出某个位置的元素，使用<code>pop(index=-1)</code>方法。其中的<code>index</code>为列表的下标，默认是最后一个元素。与remove方法的区别在于，remove删除第一个元素值，而pop删除index位置的值，并且返回这个元素值。</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 删除倒数第二个元素，</span>
+<span class="mi">9</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">l</span>
+<span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+
 <h3 id="_10">扩展列表<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>一次性添加多个元素，可以使用循环使用<code>append</code>或者<code>insert</code>方法. 一次性添加整个列表的元素，使用<code>extend</code>方法.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">l2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l1</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">l1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l2</span><span class="p">)</span> <span class="c1"># 注意与append的区别</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+</code></pre></div>
+
 <h3 id="_11">元素反向<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>元素的反向输出，前面讲列表的访问时候，用索引的方式可以实现元素的反向输出。<code>l[::-1]</code>，步长为-1，也就是反向输出。除此之外列表也提供了反向输出的方法,<code>reverse</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span> <span class="c1"># 修改了原来列表的元素</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">l</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#  反向输出，但不修改原始列表</span>
+<span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+</code></pre></div>
+
 <h3 id="_12">元素计数<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
-<h3 id="_13">列表排序<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>如果需要统计列表中元素值的个数，可以使用<code>count(value)</code>方法。</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># 不存在的元素返回0个</span>
+<span class="mi">0</span>
+</code></pre></div>
+
+<h2 id="_13">总结<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>本文讲述了列表作为数据容器，用来存放不同类型的数据（对象）。重点讲述了列表的访问和列表的操作方法。除次之外列表的方法还有几种，读者可以自行查看。在ipython环境下使用<code>??</code>或者<code>help</code>来查看方法的帮助文档。</p>
+<p><img alt="" src="../../images/qrcode.jpg" /></p>
                 
               
               
