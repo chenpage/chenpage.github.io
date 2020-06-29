@@ -60,7 +60,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="purple" data-md-color-accent="orange">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="orange">
   
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -608,9 +608,70 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        字典
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
     <a href="./" title="字典" class="md-nav__link md-nav__link--active">
       字典
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    访问
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    遍历
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    增删改操作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -906,6 +967,51 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    访问
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    遍历
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    增删改操作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -921,6 +1027,68 @@
                 
                 
                 <h1 id="_1">字典<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">介绍<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>字典是一种通过key查找value的过程的数据结构。</p>
+</blockquote>
+<p>我们查字典时通过偏旁部首查到这个字的页码，然后找到这个字。顾名思义字典就是这种数据结构。我们存储了很多数据（value），先通过key找到位置，然后就能拿到这个数据。这种就是key-value的字典数据。</p>
+<p>比如我们建立了水果与价格的关系，用字典存储。</p>
+<div class="highlight"><pre><span></span><code><span class="n">price</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;苹果&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="s2">&quot;香梨&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+    <span class="s2">&quot;西瓜&quot;</span><span class="p">:</span> <span class="mf">4.5</span><span class="p">,</span>
+    <span class="s2">&quot;荔枝&quot;</span><span class="p">:</span> <span class="mi">20</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="_3">访问<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>在查询某种水果单价的时候，我们只需要根据水果的名称就能得到。</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">price</span><span class="p">[</span><span class="s2">&quot;苹果&quot;</span><span class="p">]</span>
+<span class="mi">8</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">price</span><span class="p">[</span><span class="s1">&#39;西瓜&#39;</span><span class="p">]</span>
+<span class="mf">4.5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">price</span><span class="p">[</span><span class="s1">&#39;香蕉&#39;</span><span class="p">]</span> <span class="c1"># 报错，因为这种水果根本找不到</span>
+</code></pre></div>
+
+<p>字典除了可以便捷的获取value以外，还可以判断key是否存在字典中。上面的例子我们可以判断某种水果是不是在列出的单价中。</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;李子&#39;</span> <span class="ow">in</span> <span class="n">price</span> <span class="c1"># 不在单价中</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;西瓜&#39;</span> <span class="ow">in</span> <span class="n">price</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;李子&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">price</span> <span class="c1"># 确实不在单价中</span>
+<span class="kc">True</span>
+</code></pre></div>
+
+<h2 id="_4">遍历<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>除了上面获取value值和判断是不包含关系以外，我们还需要遍历这个字典。</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">dict_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s2">&quot;==&gt;&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="admonition note">
+<p class="admonition-title">练习</p>
+<p>读者自行输出当面的水果单价表</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>每次遍历的结果输出的顺序可能不同，这是因为字典是一种无序的数据结构，通过key-value这种键值对关联的。</p>
+</div>
+<h2 id="_5">增删改操作<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>价格表列好了，水果的价格不可能不变了。我们除了需要获取价格，还需要增加、删除、修改价格。</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">price</span><span class="p">[</span><span class="s1">&#39;李子&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">15</span> <span class="c1"># 增加李子的单价</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">price</span>
+<span class="p">{</span><span class="s1">&#39;苹果&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;香梨&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;西瓜&#39;</span><span class="p">:</span> <span class="mf">4.5</span><span class="p">,</span> <span class="s1">&#39;荔枝&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;李子&#39;</span><span class="p">:</span> <span class="mi">15</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">del</span> <span class="n">price</span><span class="p">[</span><span class="s1">&#39;西瓜&#39;</span><span class="p">]</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">price</span>
+<span class="p">{</span><span class="s1">&#39;苹果&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;香梨&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;荔枝&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;李子&#39;</span><span class="p">:</span> <span class="mi">15</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">price</span><span class="p">[</span><span class="s1">&#39;苹果&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12</span> <span class="c1"># 苹果涨价</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">price</span>
+<span class="p">{</span><span class="s1">&#39;苹果&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;香梨&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;荔枝&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;李子&#39;</span><span class="p">:</span> <span class="mi">15</span><span class="p">}</span>
+</code></pre></div>
+
+<p>这里补充一句，更新字典的时候与添加元素一样。字典添加元素的时候，如果没有key会直接添加，如果key存在的会覆盖原来的value值。</p>
+<h2 id="_6">总结<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>本节内容讲述了字典的概念，以及字典的基本使用，包括字典的访问和遍历，除次之外还有几个方法读者可以自行学习。字典的内容比较简单，基本使用就这么多。</p>
                 
               
               
