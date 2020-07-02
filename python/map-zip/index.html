@@ -635,9 +635,63 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        内置高阶函数
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
     <a href="./" title="内置高阶函数" class="md-nav__link md-nav__link--active">
       内置高阶函数
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    map函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reduce" class="md-nav__link">
+    reduce函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filter" class="md-nav__link">
+    filter函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -904,6 +958,44 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    map函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reduce" class="md-nav__link">
+    reduce函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filter" class="md-nav__link">
+    filter函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -919,6 +1011,75 @@
                 
                 
                 <h1 id="_1">内置高阶函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>在变量那一节我们讲了变量是指向数据（对象）的标签，也就意味着变量可以指向任意类型，变量指向函数肯定是可以的。既然函数也可以看成变量，那么把函数作为参数传递给函数会怎么样呢？这就是本节的内容，接收函数作为参数的函数称为高阶函数。</p>
+<h2 id="map">map函数<a class="headerlink" href="#map" title="Permanent link">&para;</a></h2>
+<p>map顾名思义就是映射的意思，接收两个参数，第一个参数为函数，第二个参数为可迭代对象。map会把这个函数并行的作用在可迭代对象的每一个元素上。先来看个例子。</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">q</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span> <span class="c1"># 返回map对象</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="c1"># 转为list</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+</code></pre></div>
+
+<p>上面的函数是对输入参数进行平方操作，map会将这个函数映射到每一个参数上。如果输入参数是多个怎么办，迭代对象的个数与函数的输入参数保持一致。</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">q</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;ABC&#39;</span><span class="p">,</span> <span class="s1">&#39;XYZ&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">&#39;AX&#39;</span><span class="p">,</span> <span class="s1">&#39;BY&#39;</span><span class="p">,</span> <span class="s1">&#39;CZ&#39;</span><span class="p">]</span>
+</code></pre></div>
+
+<h2 id="reduce">reduce函数<a class="headerlink" href="#reduce" title="Permanent link">&para;</a></h2>
+<p>reduce函数以前是内置函数，如果你的Python版本没有reeduce函数，可以尝试从<code>functools</code>模块导入。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+</code></pre></div>
+
+<p>reduce函数也是一种高阶函数，按照某种操作对可迭代对象进行归纳运算。reduce可以实现很多操作，我们简单看几个例子，<span><span class="MathJax_Preview">1+2+...+100</span><script type="math/tex">1+2+...+100</script></span>, <span><span class="MathJax_Preview">n!</span><script type="math/tex">n!</script></span>, <span><span class="MathJax_Preview">2^{3^4}</span><script type="math/tex">2^{3^4}</script></span>。详细的信息参考help文档。</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">))</span> <span class="c1"># 计算从1到100的和</span>
+<span class="mi">5050</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span> <span class="c1"># 计算5!=120</span>
+<span class="mi">120</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">y</span> <span class="o">**</span> <span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># 2^3^4</span>
+<span class="mi">2417851639229258349412352</span>
+</code></pre></div>
+
+<h2 id="filter">filter函数<a class="headerlink" href="#filter" title="Permanent link">&para;</a></h2>
+<p><code>filter</code>是一个过滤器函数，接受函数和迭代对象作为参数，将函数映射到每个迭代对象的元素上，如果函数返回结果为<code>True</code>则结果保留，如果为<code>False</code>将会被过滤掉。看一个简单的例子，输出0-9的10个数字中的偶数。</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">res</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+</code></pre></div>
+
+<p><code>lambda</code> 函数只是一种匿名函数，无法实现复杂功能，可以自定义复杂的函数，返回结果为布尔值。除此之外<code>filter</code>可以接受函数为<code>None</code>，这就意味只返回迭代对象中布尔运算为True的元素。</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="p">[],</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;abc&quot;</span><span class="p">]))</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;abc&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">bool</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="kc">False</span>
+</code></pre></div>
+
+<p>没有返回的元素，其布尔运算的结果都是<code>False</code>。</p>
+<p>接下来再补充一个函数<code>zip</code>,将多个迭代对象做组合，输入参数为两个或两个以上的迭代对象，每个迭代对象的元素个数如果不一致，以最短的迭代对象的长度作为返回长度。</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;abcd&#39;</span><span class="p">))</span>
+<span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)]</span>
+</code></pre></div>
+
+<p>如果需要组合多个对象，直接作为参数传给<code>zip</code>函数即可。除了组合参数，还可以把组合的结果拆开</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d1</span><span class="p">,</span> <span class="n">d2</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d1</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d2</span>
+<span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="_2">总结<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>本节内容一共讲了4个函数，其中3个是高阶函数：</p>
+<ul>
+<li>map 映射函数，将函数映射到迭代对象的每一个元素上，返回映射函数作用的结果，返回map对象。</li>
+<li>reduce 归纳函数，有累积循环的效果。将上一次操作结果作为第一个参数继续传入函数中。</li>
+<li>filter 过滤器函数，将函数依次作用在迭代对象上，返回True的元素结果。</li>
+<li>zip 数据组合函数，将多个迭代对象进行组合。</li>
+</ul>
+<p><img alt="" src="../../images/qrcode.jpg" /></p>
                 
               
               
